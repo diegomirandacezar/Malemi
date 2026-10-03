@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #05070B;
+    --bg-surface: #0A0F1A;
+    --bg-card: #0F1728;
+    --bg-card-hover: #142036;
+    
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-focus: rgba(9, 204, 162, 0.4);
+    
+    --accent-emerald: #09CCA2;
+    --accent-emerald-glow: rgba(9, 204, 162, 0.15);
+    
+    --tech-blue: #1D4ED8;
+    --tech-blue-glow: rgba(29, 78, 216, 0.18);
+    --tech-cyan: #38BDF8;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+  }
+}
+
+/* Custom visual utilities for Luxury Dark Tech aesthetics */
+.bg-radial-glow {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(9, 204, 162, 0.08) 0%,
+    rgba(29, 78, 216, 0.06) 40%,
+    transparent 70%
+  );
+}
+
+.bg-glass {
+  background-color: rgba(10, 15, 26, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+}
+
+.card-luxury {
+  background: linear-gradient(180deg, rgba(15, 23, 40, 0.85) 0%, rgba(10, 15, 26, 0.95) 100%);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.25s ease-out;
+}
+
+.card-luxury:hover {
+  border-color: rgba(9, 204, 162, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(9, 204, 162, 0.12);
+}
+
+.text-gradient-white {
+  background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #FFFFFF 20%, #09CCA2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05070B;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
